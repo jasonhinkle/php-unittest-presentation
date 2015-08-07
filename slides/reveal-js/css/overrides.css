@@ -1,0 +1,73 @@
+@CHARSET "UTF-8";
+
+.reveal div.well {
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.reveal section img.no-border {
+	background: none;
+	border: none;
+	box-shadow: none;
+}
+
+/*********************************************
+ * LINKS
+ *********************************************/
+.reveal a {
+  color: #e7ad52;
+  text-decoration: none;
+  -webkit-transition: color 0.15s ease;
+  -moz-transition: color 0.15s ease;
+  transition: color 0.15s ease; }
+
+.reveal a:hover {
+  color: #f3d7ac;
+  text-shadow: none;
+  border: none; }
+
+.reveal .roll span:after {
+  color: #fff;
+  background: #d0881d; }
+  
+  /*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+.reveal .controls div.navigate-left, .reveal .controls div.navigate-left.enabled {
+  border-right-color: #e7ad52; }
+
+.reveal .controls div.navigate-right, .reveal .controls div.navigate-right.enabled {
+  border-left-color: #e7ad52; }
+
+.reveal .controls div.navigate-up, .reveal .controls div.navigate-up.enabled {
+  border-bottom-color: #e7ad52; }
+
+.reveal .controls div.navigate-down, .reveal .controls div.navigate-down.enabled {
+  border-top-color: #e7ad52; }
+
+.reveal .controls div.navigate-left.enabled:hover {
+  border-right-color: #f3d7ac; }
+
+.reveal .controls div.navigate-right.enabled:hover {
+  border-left-color: #f3d7ac; }
+
+.reveal .controls div.navigate-up.enabled:hover {
+  border-bottom-color: #f3d7ac; }
+
+.reveal .controls div.navigate-down.enabled:hover {
+  border-top-color: #f3d7ac; }
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2); }
+
+.reveal .progress span {
+  background: #e7ad52;
+  -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+  

@@ -1,0 +1,62 @@
+How many people unit test?
+How many people know what their test coverage is?
+
+A quick demo of what we're going to build
+
+  - show a test running w/ firefox automation
+  - show a code coverage report
+
+Why bother unit testing?
+
+  - Because everybody says to do it?
+  - Save time!
+  - Improve Code Reliability
+  - Improve confidence when making changes
+
+The tools are getting better (kinda)
+
+  phpunit was formerly PEAR module, now is a self-contained binary
+  code coverage used to require separate install of phing, is now included
+  php xml config file was tricky to get a basic setup
+  versioning is a little weird for automated browser controls
+  headless browser testing is still a bit tricky to setup (but definitely usable)
+
+How to get into unit testing in an existing codebase with no or little tests
+
+  - start with one test to do the grunt work for you instead of using your browser
+  - use a test to reproduce a bug
+
+Setting up a simple test
+
+  - install phpunit
+  - run a very simple test
+  - show it is working by creating an error
+
+Create test for reproducing a bug
+
+    - code has a bug under a certain condition
+    - create a test that exploits that bug and fails
+    - solve the error
+    - running test again shows the error is fixed
+
+Introduction to Selenium
+
+    - warning about versions
+    - self-container java server
+    - download selenium .jar
+    - ensure FireFox is installed
+    - Launch server
+    - Run a test
+
+Selenium IDE
+
+    - install selenium IDE
+    - install PHP plugin (check the version!)
+    - record a simple test & look at it in the IDE
+    - Export test as PHP
+    - Run the test
+
+Automate Things
+
+    - phpunit.xml
+    - startup script
