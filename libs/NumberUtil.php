@@ -52,19 +52,24 @@ class NumberUtil
 
     public function GetWords($number)
     {
+
+        if ($number == '') {
+            throw new Exception('Number is required');
+        }
+
+        if (!is_numeric($number)) {
+            throw new Exception('Numeric value is required');
+        }
+
+        if (($number >= 0 && (int) $number < 0) || (int) $number < 0 - PHP_INT_MAX) {
+            throw new Exception('Number must be between -' . PHP_INT_MAX . ' and ' . PHP_INT_MAX);
+        }
+
         $hyphen      = '-';
         $conjunction = ' and ';
         $separator   = ', ';
         $negative    = 'negative ';
         $decimal     = ' point ';
-
-        if (!is_numeric($number)) {
-            throw new Exception('GetWords can only parse numeric values');
-        }
-
-        if (($number >= 0 && (int) $number < 0) || (int) $number < 0 - PHP_INT_MAX) {
-            throw new Exception('GetWords only accepts numbers between -' . PHP_INT_MAX . ' and ' . PHP_INT_MAX);
-        }
 
         if ($number < 0) {
             return $negative . $this->GetWords(abs($number));

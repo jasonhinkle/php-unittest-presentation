@@ -88,6 +88,34 @@ class UITests extends PHPUnit_Extensions_Selenium2TestCase
 
     }
 
+	/**
+     * Check that a simple conversion displays correctly
+     */
+    public function testErrorHandling()
+    {
+        $this->openBrowserToUrl(UNIT_TEST_APP_ROOT);
+
+        $this->pauseForDemo();
+
+        $this->byCssSelector("#numberInput")->value('');
+        $this->byCssSelector("#convertButton")->click();
+
+        usleep(.5 * 1000000);
+        $result = $this->byCssSelector("#resultContainer")->text();
+        $this->assertEquals("Number is required",$result);
+
+		usleep(.5 * 1000000);
+		$this->byCssSelector("#closeModalButton")->click();
+
+		$this->byCssSelector("#numberInput")->value('AAA');
+        $this->byCssSelector("#convertButton")->click();
+        usleep(.5 * 1000000);
+        $result = $this->byCssSelector("#resultContainer")->text();
+        $this->assertEquals("Numeric value is required",$result);
+
+
+    }
+
     /**
      * Helper method to pause for presentation purposes
      */

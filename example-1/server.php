@@ -3,14 +3,22 @@
 require_once '../libs/ColorUtil.php';
 require_once '../libs/NumberUtil.php';
 
-$number = strip_tags( $_REQUEST['number'] );
+$number = strip_tags(
+    isset($_REQUEST['number'])
+        ? $_REQUEST['number']
+        : '' 
+);
 
 $numUtil = new NumberUtil();
 
-$text = $numUtil->GetWords($number);
+$result = new stdClass();
+$result->number = $number;
 
-$obj = array(
-    "number"=>$number,
-    "text"=>$text);
+try {
+    $result->text = $numUtil->GetWords($number);
+}
+catch (Exception $ex) {
+    $result->error = $ex->getMessage();
+}
 
-echo json_encode($obj);
+echo json_encode($result);
