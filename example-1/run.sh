@@ -6,6 +6,7 @@ clear
 echo "Cleaning folders..."
 rm ./selenium.log 2> /dev/null
 rm -rf ./screenshots 2> /dev/null
+rm -rf ./coverage 2> /dev/null
 mkdir screenshots
 echo "Starting Selenium Server..."
 java -jar ../selenium/selenium-server-standalone-2.46.0.jar &> selenium.log &
@@ -15,3 +16,4 @@ phpunit --coverage-html ./coverage tests/AllTests
 echo "Shutting Down Selenium Server..."
 pkill -f 'selenium'
 echo "Testing Complete."
+open http://localhost/php-unittest-presentation/example-1/coverage/

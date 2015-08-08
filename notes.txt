@@ -26,6 +26,9 @@ Setup
 
  - Warning:	The Xdebug extension is not loaded.  No code coverage will be generated.
 
+https://github.com/sebastianbergmann/php-code-coverage
+https://github.com/sebastianbergmann/php-file-iterator
+
 How to get into unit testing in an existing codebase with no or little tests
 
   - start with one test to do the grunt work for you instead of using your browser

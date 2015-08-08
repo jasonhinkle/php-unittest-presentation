@@ -4,16 +4,13 @@ require_once '../libs/ColorUtil.php';
 
 class ColorTests extends PHPUnit_Framework_TestCase
 {
-    public function testPushAndPop()
+    public function testStringToHex()
     {
-        $stack = array();
-        $this->assertEquals(0, count($stack));
+        $util = new ColorUtil();
 
-        array_push($stack, 'foo');
-        $this->assertEquals('foo', $stack[count($stack)-1]);
-        $this->assertEquals(1, count($stack));
+        $this->assertEquals('#008000',$util->GetHexString('green'),'Test hex value for color green');
 
-        $this->assertEquals('foo', array_pop($stack));
-        $this->assertEquals(0, count($stack));
+        $this->assertEquals('#FFFFFF',$util->GetHexString('white'),'Test hex value for color white');
+
     }
 }

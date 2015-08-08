@@ -3,7 +3,7 @@
 class NumberUtil
 {
 
-    private static $DICTIONARY = array(
+    const NUMBER_NAMES = array(
             0                   => 'zero',
             1                   => 'one',
             2                   => 'two',
@@ -59,16 +59,11 @@ class NumberUtil
         $decimal     = ' point ';
 
         if (!is_numeric($number)) {
-            return false;
+            throw new Exception('GetWords can only parse numeric values');
         }
 
         if (($number >= 0 && (int) $number < 0) || (int) $number < 0 - PHP_INT_MAX) {
-            // overflow
-            trigger_error(
-                'convert_number_to_words only accepts numbers between -' . PHP_INT_MAX . ' and ' . PHP_INT_MAX,
-                E_USER_WARNING
-            );
-            return false;
+            throw new Exception('GetWords only accepts numbers between -' . PHP_INT_MAX . ' and ' . PHP_INT_MAX);
         }
 
         if ($number < 0) {
@@ -83,20 +78,20 @@ class NumberUtil
 
         switch (true) {
                 case $number < 21:
-                    $string = self::$DICTIONARY[$number];
+                    $string = self::NUMBER_NAMES[$number];
                     break;
                 case $number < 100:
                     $tens   = ((int) ($number / 10)) * 10;
                     $units  = $number % 10;
-                    $string = self::$DICTIONARY[$tens];
+                    $string = self::NUMBER_NAMES[$tens];
                     if ($units) {
-                        $string .= $hyphen . self::$DICTIONARY[$units];
+                        $string .= $hyphen . self::NUMBER_NAMES[$units];
                     }
                     break;
                 case $number < 1000:
                     $hundreds  = $number / 100;
                     $remainder = $number % 100;
-                    $string = self::$DICTIONARY[$hundreds] . ' ' . self::$DICTIONARY[100];
+                    $string = self::NUMBER_NAMES[$hundreds] . ' ' . self::NUMBER_NAMES[100];
                     if ($remainder) {
                         $string .= $conjunction . $this->GetWords($remainder);
                     }
@@ -105,7 +100,7 @@ class NumberUtil
                     $baseUnit = pow(1000, floor(log($number, 1000)));
                     $numBaseUnits = (int) ($number / $baseUnit);
                     $remainder = $number % $baseUnit;
-                    $string = $this->GetWords($numBaseUnits) . ' ' . self::$DICTIONARY[$baseUnit];
+                    $string = $this->GetWords($numBaseUnits) . ' ' . self::NUMBER_NAMES[$baseUnit];
                     if ($remainder) {
                         $string .= $remainder < 100 ? $conjunction : $separator;
                         $string .= $this->GetWords($remainder);
@@ -117,7 +112,7 @@ class NumberUtil
                 $string .= $decimal;
                 $words = array();
                 foreach (str_split((string) $fraction) as $number) {
-                    $words[] = self::$DICTIONARY[$number];
+                    $words[] = self::NUMBER_NAMES[$number];
                 }
                 $string .= implode(' ', $words);
             }
