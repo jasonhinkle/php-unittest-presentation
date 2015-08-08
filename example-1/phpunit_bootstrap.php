@@ -11,4 +11,4 @@
  */
 
 define('UNIT_TEST_BROWSER','phantomjs'); // 'firefox' or 'phantomjs'
-define('UNIT_TEST_APP_ROOT','http://localhost/php-unittest-presentation/example-1/'); // 'firefox' or 'phantomjs'
+define('UNIT_TEST_APP_ROOT','http://localhost/php-unittest-presentation/example-1/');

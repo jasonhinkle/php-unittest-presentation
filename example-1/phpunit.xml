@@ -21,8 +21,9 @@
 
 			<!-- these files & directories are excluded from the coverage report -->
 			<exclude>
-				<file>./index.php</file>
 				<file>./phpunit_bootstrap.php</file>
+				<file>./phpunit_coverage.php</file>
+				<directory>./tests</directory>
 				<file>../libs/VerboseTestResultPrinter.php</file>
 			</exclude>
 		</whitelist>

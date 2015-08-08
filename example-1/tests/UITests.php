@@ -20,7 +20,7 @@ class UITests extends PHPUnit_Extensions_Selenium2TestCase
 
     // declared in order to include code run by selemium in the coverage report
     // (additionally requires configuring 'append.php' and 'prepend.php' in php.ini)
-	// protected $coverageScriptUrl = 'http://localhost/.../phpunit_coverage.php';
+	protected $coverageScriptUrl = 'http://localhost/php-unittest-presentation/example-1/phpunit_coverage.php';
 
     /**
      * This method will fire multiple times - once before each test is run.
@@ -41,6 +41,16 @@ class UITests extends PHPUnit_Extensions_Selenium2TestCase
     {
         $this->pauseForDemo();
     }
+
+	/**
+	 * HACK for selenium error "Can only set Cookies for the current domain"
+	 *      when using phantomjs and generating code coverage
+	 */
+	public function prepareSession() {
+		$res = parent::prepareSession();
+		$this->url('/');
+		return $res;
+	}
 
     /**
      * Test that the index page is loading, checking for a landmark
