@@ -45,8 +45,8 @@
 				<section data-background="assets/background.gif">
 					<div class="well">
 						<h2>Jason Hinkle</h2>
-						<p><a href="http://www.eventric.com/">Eventric</a>, Chicago IL</p>
-						<p><a href="http://twitter.com/jasonhinkle">@jasonhinkle</a> - <a href="https://github.com/jasonhinkle">github.com/jasonhinkle</a></p>
+						<p>Eventric, Chicago IL</p>
+						<p>github.com/jasonhinkle</p>
 					</div>
 				</section>
 
@@ -57,6 +57,7 @@
 
 				<section>
 					<div><img style="height: 400px;" src="assets/thank-you.jpg"></div>
+					<p>Contact me <a href="http://twitter.com/jasonhinkle">@jasonhinkle</a></p>
 					<p>Presentation materials are online at <a href="https://github.com/jasonhinkle/php-unittest-presentation">github.com/jasonhinkle/php-unittest-presentation</a></p>
 				</section>
 			</div>

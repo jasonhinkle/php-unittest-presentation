@@ -1,0 +1,31 @@
+<phpunit
+	bootstrap="phpunit_bootstrap.php"
+	colors="true"
+	printerClass="VerboseTestResultPrinter"
+	printerFile="../libs/VerboseTestResultPrinter.php"
+	stopOnError="false"
+	stopOnFailure="false"
+	stopOnIncomplete="false"
+	stopOnSkipped="false">
+
+	<testsuite name="Example Test Suite">
+		<directory>./tests/</directory>
+	</testsuite>
+
+	<!-- Code Coverage -->
+	<filter>
+		<whitelist>
+			<!-- these files & directories are included in the coverage report -->
+			<directory suffix=".php">./</directory>
+			<directory suffix=".php">../libs</directory>
+
+			<!-- these files & directories are excluded from the coverage report -->
+			<exclude>
+				<file>./index.php</file>
+				<file>./phpunit_bootstrap.php</file>
+				<file>../libs/VerboseTestResultPrinter.php</file>
+			</exclude>
+		</whitelist>
+	</filter>
+
+</phpunit>

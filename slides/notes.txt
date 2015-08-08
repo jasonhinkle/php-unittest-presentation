@@ -6,6 +6,8 @@ A quick demo of what we're going to build
   - show a test running w/ firefox automation
   - show a code coverage report
 
+  - purposely not using namespaces, autoloaders, frameworks, templates, etc for this presentation
+
 Why bother unit testing?
 
   - Because everybody says to do it?
