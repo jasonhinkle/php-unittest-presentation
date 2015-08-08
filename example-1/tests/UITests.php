@@ -136,7 +136,7 @@ class UITests extends PHPUnit_Extensions_Selenium2TestCase
         // it's necessary to resize the window for phantomjs otherwise elements can't be located
         // this cannot be done in setUp because the browser session is not yet active
         $win=$this->currentWindow();
-        $win->size(array('width' => 1440, 'height' => 900));
+        $win->size(array('width' => 800, 'height' => 600));
     }
 
     /**
