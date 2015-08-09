@@ -6,7 +6,7 @@ require_once '../libs/NumberUtil.php';
 $number = strip_tags(
     isset($_REQUEST['number'])
         ? $_REQUEST['number']
-        : '' 
+        : ''
 );
 
 $numUtil = new NumberUtil();
@@ -20,5 +20,7 @@ try {
 catch (Exception $ex) {
     $result->error = $ex->getMessage();
 }
+
+
 
 echo json_encode($result);

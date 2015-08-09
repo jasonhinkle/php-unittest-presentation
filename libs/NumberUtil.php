@@ -3,6 +3,7 @@
 class NumberUtil
 {
 
+    /** @var array of strings for numbers */
     const NUMBER_NAMES = array(
             0                   => 'zero',
             1                   => 'one',
@@ -40,16 +41,31 @@ class NumberUtil
             1000000000000000    => 'quadrillion',
             1000000000000000000 => 'quintillion');
 
+    /**
+     * Return true if the provided number is even
+     * @param number
+     * @return boolval
+     */
     public function IsEven($number)
     {
         return $number % 2 == 0;
     }
 
+    /**
+     * Return true if the provided number is odd
+     * @param number
+     * @return boolval
+     */
     public function IsOdd($number)
     {
         return !$this->IsEven($number);
     }
 
+    /**
+     * Return a textual representation of a number
+     * @param number
+     * @return string
+     */
     public function GetWords($number)
     {
 
@@ -116,6 +132,7 @@ class NumberUtil
     }
 
     /**
+     * @param number
      * @throws Exception if number is not valid
      */
     private function Validate($number)

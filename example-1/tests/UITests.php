@@ -156,7 +156,7 @@ class UITests extends PHPUnit_Extensions_Selenium2TestCase
      */
 	protected function saveScreenshot()
 	{
-		$path = __DIR__.'/tests-output/screenshots/'.$this->getName().'-'.time(). '.png';
+		$path = UNIT_TEST_SCREENSHOT_DIR . $this->getName() . '-' . time() . '.png';
 		file_put_contents($path, $this->currentScreenshot());
 	}
 
