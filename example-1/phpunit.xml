@@ -8,10 +8,6 @@
 	stopOnIncomplete="false"
 	stopOnSkipped="false">
 
-	<testsuite name="Example Test Suite">
-		<directory>./tests/</directory>
-	</testsuite>
-
 	<!-- Code Coverage -->
 	<filter>
 		<whitelist>
