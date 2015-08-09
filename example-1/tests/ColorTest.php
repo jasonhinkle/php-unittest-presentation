@@ -2,7 +2,7 @@
 
 require_once '../libs/ColorUtil.php';
 
-class ColorTests extends PHPUnit_Framework_TestCase
+class ColorTest extends PHPUnit_Framework_TestCase
 {
     public function testStringToHex()
     {

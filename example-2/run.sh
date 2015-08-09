@@ -1,1 +1,1 @@
-phpunit tests/NumberTests.php
+phpunit tests/

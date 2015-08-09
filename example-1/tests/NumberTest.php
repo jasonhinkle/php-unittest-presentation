@@ -2,7 +2,7 @@
 
 require_once '../libs/NumberUtil.php';
 
-class NumberTests extends PHPUnit_Framework_TestCase
+class NumberTest extends PHPUnit_Framework_TestCase
 {
     public function testMod()
     {

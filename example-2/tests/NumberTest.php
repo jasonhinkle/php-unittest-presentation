@@ -1,18 +1,31 @@
 <?php
+/**
+ * NumberTest.php
+ *
+ * ########## The file name is important! ##########
+ *
+ * PHPUnit looks for files that end in "Test.php"
+ * This naming convention isn't technically required, however PHPUnit
+ * will not automatically detect files without the recommended suffix.
+ */
 
+// you could use an autoloader here, or rely on a bootstrap.php file
+// for this example we will keep things simple
 require_once '../libs/NumberUtil.php';
 
 /**
- * A TestCase is a collection of unit tests.
+ * A TestCase class contains a collection of one or more unit tests.
  * This class extends the PHPUnit_Framework_TestCase which provides various
- * helper methods.  By convention the classname should match the
- * filename, however this is not required.
+ * helper methods.  The classname usually matches the file name
+ * however this is not required.
  */
-class NumberTests extends PHPUnit_Framework_TestCase
+class NumberTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * A method indicates a single unit test. The method name must begin with
-     * the text "test".  PHPUnit will ignore any method that does not begin
+     * ########## The method name is important! ##########
+     *
+     * A method indicates a single unit test. The method name *must* begin with
+     * the "test".  PHPUnit will ignore any method that does not begin
      * with test.
      */
     public function testEvenCalculation()

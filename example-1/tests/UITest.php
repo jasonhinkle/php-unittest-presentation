@@ -15,7 +15,7 @@
  * $this->byCssSelector("#input-id")->click();
  * $this->byLinkText("Link Text")->click();
  */
-class UITests extends PHPUnit_Extensions_Selenium2TestCase
+class UITest extends PHPUnit_Extensions_Selenium2TestCase
 {
 
     // declared in order to include code run by selemium in the coverage report

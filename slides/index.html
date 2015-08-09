@@ -50,22 +50,32 @@
 					</div>
 				</section>
 
-				<section>
-					<h2>Required Components</h2>
+				<section data-transition="convex">
+					<h2>A few things...</h2>
 					<ul>
-						<li>OSX, *nix or Windows</li>
-						<li>PHP 5.3.3 (or higher)</li>
-						<li>Web server w/ PHP Configured</li>
-						<li>Java Runtime</li>
-						<li>Firefox</li>
+						<li class="fragment"><span class="">Code examples are purposely minimal</span></li>
+						<li class="fragment"><span class="">No frameworks, no composer, no autoloaders</span></li>
+						<li class="fragment"><span class="">Basic folder-based setup for test suites</span></li>
+						<li class="fragment"><span class="">I don't know everything - suggestions welcome!</span></li>
 					</ul>
 				</section>
 
 				<section>
+					<h2>Hello!</h2>
+					<p>Let's start with a demo...</p>
+					<p><a href="../example-1/" target="_blank"><img src="assets/example-1.png"></a></p>
+				</section>
+
+
+				<section>
 
 					<section>
-						<h2>Selenium Product Confusion</h2>
-						<p>Components and Versions and Plugins, Oh My!</p>
+						<h2>Selenium Browser Automation</h2>
+						<p><img src="assets/confused.jpg"></p>
+					</section>
+
+					<section>
+						<h4>Components and Versions and Plugins, Oh My!</h4>
 						<ul>
 							<li>Selenium 1 vs. Selenium 2</li>
 							<li>Selenium RC vs. Selenium WebDriver</li>
@@ -73,20 +83,18 @@
 							<li>Selenium Formatters</li>
 						</ul>
 
-						<blockquote class="fragment">The download page has 100s of downloads!</blockquote>
+						<blockquote class="fragment">The download page has 100s of links!</blockquote>
 					</section>
 
 					<section data-transition="convex">
-						<h2>Online Help is of Little Help</h2>
+						<h2>Online Help - not so helpful</h2>
 						<ul>
-							<li><span class="">Major breaking syntax changes between v1 and v2.</span></li>
-							<li><span class="">Headless browser testing requires v2.</span></li>
-							<li><span class="">Most online examples are for v1.</span></li>
-							<li><span class="">Selenium+PhantomJS tutorials are incorrect.</span></li>
+							<li><span class="">Major breaking syntax changes between v1 and v2</span></li>
+							<li><span class="">Headless browser testing requires v2</span></li>
+							<li><span class="">Most online examples are for v1</span></li>
+							<li><span class="">Selenium+PhantomJS tutorials are incorrect</span></li>
 							<li><span class="">Current PhantomJS (2.0) binary release is broken!</span></li>
 						</ul>
-
-						<blockquote class="fragment">AAAAAAAAAHHHH!!!</blockquote>
 					</section>
 
 				</section>
@@ -97,17 +105,33 @@
 					</section>
 
 					<section data-transition="convex">
-						<h2>We only care about these:</h2>
+						<h2>We only need these three</h2>
 						<ul>
 							<li><span class="">PHPUnit 4.8</span></li>
 							<li><span class="">Selenium Stand-Alone Server 2.47.0</span></li>
-							<li><span class="">Selenium IDE 2.9.0</span></li>
-							<li><span class="">Selenium 2 PHP Formatter</span></li>
 							<li><span class="">PhantomJS 2.0 (Patched)</span></li>
 						</ul>
 
-						<blockquote class="fragment">Let's install the tools...</blockquote>
+						<p><h4>These two helper utilities are optional</h4></p>
 
+						<ul>
+							<li><span class="">Selenium IDE 2.9.0</span></li>
+							<li><span class="">Selenium 2 PHP Formatter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+						</ul>
+					</section>
+
+					<section data-transition="convex">
+						<h2>Required Prerequisites</h2>
+
+						<p>(You probably already have them installed)</p>
+
+						<ul>
+							<li>PHP 5.3.3 (or higher)</li>
+							<li>Web server w/ PHP Configured</li>
+							<li>Java Runtime</li>
+							<li>Firefox</li>
+							<li>Xdebug Extension (for code coverage)</li>
+						</ul>
 					</section>
 
 					<section data-transition="convex">
@@ -124,6 +148,26 @@
 					</section>
 
 					<section data-transition="convex">
+						<h2>PhantomJS Installation</h2>
+
+						<p><a href="http://phantomjs.org/"><img src="assets/phantomjs.png"></a></p>
+						<ul>
+							<li>Download binary and save in your PATH</li>
+							<li><span class="fragment highlight-red grow">The official binary 2.0 is broken</span></li>
+							<li>My patched binaries for
+								<a href="http://phreeze.com/assets/phantomjs-2.0.0-macosx-hotpatch.zip">OSX</a>
+								or <a href="http://phreeze.com/assets/phantomjs-2.0.0-ubuntu-hotpatch.zip">Ubuntu</a> work
+							</li>
+						</ul>
+
+						<blockquote class="fragment">
+							Or build from source &amp;
+							<a href="https://gist.github.com/jasonhinkle/88276b7f02cb678bb64e">patch</a> the binary
+						</blockquote>
+
+					</section>
+
+					<section data-transition="convex">
 						<h2>Selenium IDE Installation</h2>
 						<p>Install this plugin using FireFox</p>
 						<p><a href="http://www.seleniumhq.org/download/"><img src="assets/selenium-download-ide.png"></a></p>
@@ -135,42 +179,11 @@
 						<p><a href="https://github.com/suzuki/PHP-Formatter-PHPUnit_Selenium2"><img src="assets/selenium-download-formatter.png"></a></p>
 					</section>
 
-					<section data-transition="convex">
-						<h2>PhantomJS Installation</h2>
-
-						<p><a href="http://phantomjs.org/"><img src="assets/phantomjs.png"></a></p>
-						<ul>
-							<li>Download binary and save in your PATH</li>
-							<li><span class="fragment highlight-red grow">The official binary 2.0 is broken.</span></li>
-							<li>My patched binaries for
-								<a href="http://phreeze.com/assets/phantomjs-2.0.0-macosx-hotpatch.zip">OSX</a>
-								or <a href="http://phreeze.com/assets/phantomjs-2.0.0-ubuntu-hotpatch.zip">Ubuntu</a> work.
-							</li>
-						</ul>
-
-						<blockquote class="fragment">
-							Otherwise build from source or
-							<a href="https://gist.github.com/jasonhinkle/88276b7f02cb678bb64e">patch the official binary</a>.
-						</blockquote>
-
-					</section>
-
 				</section>
 
 				<section>
-					<h2>PHPUnit</h2>
-					<p>Download self-contained phar file from phpunit.de and follow the instructions for
-						<a href="https://phpunit.de/getting-started.html">OSX, *NIX</a>
-						or <a href="https://phpunit.de/manual/current/en/installation.html#installation.phar.windows">Windows</a>)</p>
-
-					<h2>Selenium</h2>
-					<p>Download self-container .jar <a href="http://www.seleniumhq.org/download/">Selenium Standalone Server</a>
-					.jar file seleniumhq.org</p>
-				</section>
-
-				<section>
-					<div><img class="no-border" src="assets/eventric_logo.png"></div>
-					<p><span class="fragment">TODO</span><span class="fragment">, More Info...</span></p>
+					<h2>Let's Write Some Code...</h2>
+					<p><img src="assets/test-case-code.png"></p>
 				</section>
 
 				<!-- THANK YOU -->

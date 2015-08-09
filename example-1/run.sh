@@ -12,7 +12,7 @@ echo "Starting Selenium Server..."
 java -jar ../selenium/selenium-server-standalone-2.47.1.jar &> tests-output/selenium.log &
 sleep 1
 
-phpunit --coverage-html ./tests-output/coverage tests/AllTests
+phpunit --coverage-html ./tests-output/coverage tests/
 
 echo "Shutting Down Selenium Server..."
 pkill -f 'selenium'
