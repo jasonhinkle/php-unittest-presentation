@@ -78,7 +78,7 @@ class UITests extends PHPUnit_Extensions_Selenium2TestCase
 
         // wait for the dom to update
         // $this->timeouts()->implicitWait(1000); // this should work but doesn't!
-        usleep(.5 * 1000000);
+        $this->Wait(.5);
 
         $result = $this->byCssSelector("#resultContainer")->text();
 
@@ -100,21 +100,33 @@ class UITests extends PHPUnit_Extensions_Selenium2TestCase
         $this->byCssSelector("#numberInput")->value('');
         $this->byCssSelector("#convertButton")->click();
 
-        usleep(.5 * 1000000);
+        $this->Wait(.5);
         $result = $this->byCssSelector("#resultContainer")->text();
         $this->assertEquals("Number is required",$result);
 
-		usleep(.5 * 1000000);
+		$this->Wait(.5);
 		$this->byCssSelector("#closeModalButton")->click();
 
+		$this->Wait(.5);
 		$this->byCssSelector("#numberInput")->value('AAA');
         $this->byCssSelector("#convertButton")->click();
-        usleep(.5 * 1000000);
+
+        $this->Wait(.5);
         $result = $this->byCssSelector("#resultContainer")->text();
         $this->assertEquals("Numeric value is required",$result);
 
+		$this->saveScreenshot();
 
     }
+
+	/**
+	 * Helper method to sleep for fractions of a second
+	 * @param number decimals accepted
+	 */
+	protected function Wait($seconds)
+	{
+		usleep($seconds * 1000000);
+	}
 
     /**
      * Helper method to pause for presentation purposes
@@ -144,7 +156,7 @@ class UITests extends PHPUnit_Extensions_Selenium2TestCase
      */
 	protected function saveScreenshot()
 	{
-		$path = __DIR__.'/../screenshots/'.$this->getName().'-'.time(). '.png';
+		$path = __DIR__.'/tests-output/screenshots/'.$this->getName().'-'.time(). '.png';
 		file_put_contents($path, $this->currentScreenshot());
 	}
 

@@ -1,19 +1,22 @@
-# PHREEZE TEST RUNNER
-# This is a test runner script for PHREEZE
-# See README for setup instructions
+#
+# PHPUNIT TEST RUNNER
 #
 clear
+
 echo "Cleaning folders..."
-rm ./selenium.log 2> /dev/null
-rm -rf ./screenshots 2> /dev/null
-rm -rf ./coverage 2> /dev/null
-mkdir screenshots
+rm -rf ./tests-output 2> /dev/null
+mkdir tests-output
+mkdir tests-output/screenshots
+
 echo "Starting Selenium Server..."
-java -jar ../selenium/selenium-server-standalone-2.46.0.jar &> selenium.log &
+java -jar ../selenium/selenium-server-standalone-2.47.1.jar &> tests-output/selenium.log &
 sleep 1
-# phpunit tests/AllTests.php
-phpunit --coverage-html ./coverage tests/AllTests
+
+phpunit --coverage-html ./tests-output/coverage tests/AllTests
+
 echo "Shutting Down Selenium Server..."
 pkill -f 'selenium'
+
 echo "Testing Complete."
-open http://localhost/php-unittest-presentation/example-1/coverage/
+
+open http://localhost/php-unittest-presentation/example-1/tests-output/coverage/
