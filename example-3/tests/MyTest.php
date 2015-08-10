@@ -12,11 +12,11 @@ class MyTest extends PHPUnit_Extensions_Selenium2TestCase
         $this->setPort(4444);
         $this->setBrowserUrl('http://localhost/');
     }
-    
-    /** 
-     * Method testMy 
-     * @test 
-     */ 
+
+    /**
+     * Method testMy
+     * @test
+     */
     public function testMy()
     {
         $this->url("/php-unittest-presentation/example-1/");
@@ -32,7 +32,6 @@ class MyTest extends PHPUnit_Extensions_Selenium2TestCase
 
         $result = $this->byCssSelector("#resultContainer")->text();
         $this->assertEquals("twenty-five", $result);
-        // ERROR: Caught exception [TypeError: statement is not a function]
     }
 
 }

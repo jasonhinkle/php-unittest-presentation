@@ -57,10 +57,10 @@
 						<li class=""><span class="">It's a deep topic - we'll hit the basics</span></li>
 						<li class=""><span class="">Code examples are purposely minimal</span></li>
 						<li class=""><span class="">I'll be mixing Unit &amp; Functional Testing</span></li>
-						<li class=""><span class="">These slides and code are <a href="https://github.com/jasonhinkle/php-unittest-presentation">online</a></span></li>
+						<li class=""><span class="">Unit testing is fun!</li>
 					</ul>
 
-					<blockquote class="fragment">I don't know everything.<br/>Suggestions welcome!</blockquote>
+					<blockquote>Slide deck and examples are <a href="https://github.com/jasonhinkle/php-unittest-presentation">online</a></blockquote>
 
 				</section>
 
@@ -74,15 +74,6 @@
 					<section>
 						<h2>Installing The Tools</h2>
 						<p><img src="assets/confused.jpg"></p>
-					</section>
-
-					<section data-transition="convex">
-						<h2>Things we will need</h2>
-						<ul>
-							<li class=""><span class="">Some unit tests</span></li>
-							<li class=""><span class="">Tool to run the tests</span></li>
-							<li class=""><span class="">Something to control the browser</span></li>
-						</ul>
 					</section>
 
 					<section data-transition="convex">
@@ -102,7 +93,7 @@
 					</section>
 
 					<section data-transition="convex">
-						<h2>Required Prerequisites</h2>
+						<h2>System Requirements</h2>
 
 						<p>(You probably already have them installed)</p>
 
@@ -164,7 +155,43 @@
 
 				<section>
 
-					<section>
+					<section data-transition="fade">
+						<h2>Anatomy of a Unit Test</h2>
+						<pre><code class="php">// The class is a "Test Case"
+class NumberTest extends PHPUnit_Framework_TestCase
+{
+
+
+
+
+
+
+
+
+
+
+}</code></pre>
+					</section>
+
+					<section data-transition="fade">
+						<h2>Anatomy of a Unit Test</h2>
+						<pre><code class="php">// The class is a "Test Case"
+class NumberTest extends PHPUnit_Framework_TestCase
+{
+    // phpunit looks for methods that begins with "test"
+    public function testNumberIsEven()
+    {
+
+
+
+
+
+
+    }
+}</code></pre>
+					</section>
+
+					<section data-transition="fade">
 						<h2>Anatomy of a Unit Test</h2>
 						<pre><code class="php">// The class is a "Test Case"
 class NumberTest extends PHPUnit_Framework_TestCase
@@ -196,10 +223,14 @@ phpunit path/to/tests</code></pre>
 
 					<section data-transition="convex">
 						<h2>phpunit.xml</h2>
-
 						<p><img src="assets/phpunit-xml.png"></p>
-
 					</section>
+
+					<section data-transition="convex">
+						<h2>Let's Run Example Two...</h2>
+						<p><img src="assets/example-2.png"></p>
+					</section>
+
 				</section>
 
 				<section>
@@ -225,7 +256,7 @@ class UITest extends PHPUnit_Extensions_Selenium2TestCase
 public function testElementText()
 {
     // we have access to the browser window &amp; DOM
-    $this->openBrowserToUrl('http://.../page/to/test/');
+    $this->url('http://.../page/to/test/');
     $this->byCssSelector("#myButtonId")->click();
 
     $result = $this->byCssSelector("#myElementId")->text();
@@ -255,6 +286,17 @@ pkill -f 'selenium'
 						<h2>Using Selenium IDE</h2>
 						<p><img src="assets/selenium-ide.png"></p>
 					</section>
+
+					<section>
+						<h2>PHP Formatter</h2>
+						<p><img src="assets/php-formatter.png"></p>
+					</section>
+
+					<section data-transition="convex">
+						<h2>Let's Run Example Three...</h2>
+						<p><img src="assets/example-3.png"></p>
+					</section>
+
 				</section>
 
 				<section>
