@@ -7,5 +7,8 @@
  * to include this file prior to running any tests.
  */
 
-define('UNIT_TEST_BROWSER', 'firefox'); // 'firefox' or 'phantomjs'
+ define('UNIT_TEST_BROWSER', getenv('UNIT_TEST_BROWSER')
+     ? getenv('UNIT_TEST_BROWSER')
+     : 'firefox');
+     
 define('UNIT_TEST_APP_ROOT', 'http://localhost/php-unittest-presentation/example-3/');
