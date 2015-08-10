@@ -166,22 +166,40 @@
 
 					<section>
 						<h2>Anatomy of a Unit Test</h2>
-						<p><img src="assets/unit-test.png"></p>
+						<pre><code class="php">// The class is a "Test Case"
+class NumberTest extends PHPUnit_Framework_TestCase
+{
+    // within the class, each method is a test
+    public function testNumberIsEven()
+    {
+        // call some of our code that we wish to test
+        $util = new NumberUtil();
+        $isEven = $util->IsEven(2);
+
+        // tell phpunit to verify an assertion is correct
+        $this->assertTrue($isEven);
+    }
+}</code></pre>
 					</section>
 
 					<section data-transition="convex">
 						<h2>Running a test is easy:</h2>
-						<code class="hljs">
-							phpunit path/to/tests
-						</code>
+
+						<pre><code class="bash">#!/bin/bash
+
+# run a single test
+phpunit path/to/tests/NumberTest.php
+
+# run a suite (all files ending in "Test.php")
+phpunit path/to/tests
+						</code></pre>
 					</section>
 
 					<section data-transition="convex">
-						<h2>Optional Configuration</h2>
-						<ul>
-							<li class=""><span class="">phpunit.xml</span></li>
-							<li class=""><span class="">printerClass</span></li>
-						</ul>
+						<h2>phpunit.xml</h2>
+
+						<p><img src="assets/phpunit-xml.png"></p>
+
 					</section>
 				</section>
 
@@ -193,34 +211,30 @@
 				<section>
 					<section>
 						<h2>Coverage Reports</h2>
-						<code class="hljs">
-							phpunit --coverage-html /output/ /tests/
-						</code>
+						<pre><code class="bash">#!/bin/bash
+
+phpunit --coverage-html /path/to/output/ /path/to/tests/</code></pre>
 
 					</section>
 
 					<section data-transition="convex">
 						<h2>Coverage Configuration</h2>
-						<ul>
-							<li class=""><span class="">phpunit.xml</span></li>
-							<li class=""><span class="">whitelist &amp; exclude</span></li>
-						</ul>
+						<p><img src="assets/coverage-xml.png"></p>
 					</section>
 
 					<section data-transition="convex">
 						<h2>Coverage for Selenium</h2>
-						<blockquote>Setup is a PITA, don't give up!</blockquote>
-						<ul>
-							<li class=""><span class="">$coverageScriptUrl = 'http://.../phpunit_coverage.php'</span></li>
-							<li class=""><span class="">php.ini configuration:</span>
-								<ul>
-									<li>auto_prepend_file = /path/to/prepend.php</li>
-									<li>auto_append_file = /path/to/append.php</li>
-								</ul>
-							</li>
-						</ul>
-					</section>
 
+						<p><h4>In your test class</h4></p>
+						<pre><code class="php">// declare this property
+protected $coverageScriptUrl = 'http://.../phpunit_coverage.php';</code></pre>
+
+<p><h4>In php.ini (or .htaccess)</h4></p>
+<pre><code class="ini">; enable these two settings
+auto_prepend_file = /path/to/prepend.php
+auto_append_file = /path/to/append.php
+</code></pre>
+					</section>
 				</section>
 
 				<section>
