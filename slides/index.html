@@ -76,7 +76,7 @@
 						<p><img src="assets/confused.jpg"></p>
 					</section>
 
-					<section>
+					<section data-transition="convex">
 						<h2>Things we will need</h2>
 						<ul>
 							<li class=""><span class="">Some unit tests</span></li>
@@ -169,7 +169,7 @@
 						<pre><code class="php">// The class is a "Test Case"
 class NumberTest extends PHPUnit_Framework_TestCase
 {
-    // within the class, each method is a test
+    // phpunit looks for methods that begins with "test"
     public function testNumberIsEven()
     {
         // call some of our code that we wish to test
@@ -191,8 +191,7 @@ class NumberTest extends PHPUnit_Framework_TestCase
 phpunit path/to/tests/NumberTest.php
 
 # run a suite (all files ending in "Test.php")
-phpunit path/to/tests
-						</code></pre>
+phpunit path/to/tests</code></pre>
 					</section>
 
 					<section data-transition="convex">
@@ -204,8 +203,58 @@ phpunit path/to/tests
 				</section>
 
 				<section>
-					<h2>Selenium IDE Demo</h2>
-					<p><img src="assets/selenium-ide.png"></p>
+					<section>
+						<h2>Anatomy of a Selenium Test</h2>
+						<pre><code class="php">// we extend a different class
+class UITest extends PHPUnit_Extensions_Selenium2TestCase
+{
+    // initialize the browser in Setup()
+    protected function setUp()
+	{
+        $this->setBrowser('firefox');
+        $this->setBrowserUrl('http://localhost/');
+    }
+
+// ...</code></pre>
+					</section>
+
+					<section>
+						<h2>Controlling The Browser</h2>
+						<pre><code class="php">
+// test methods are the same as normal tests
+public function testElementText()
+{
+    // we have access to the browser window &amp; DOM
+    $this->openBrowserToUrl('http://.../page/to/test/');
+    $this->byCssSelector("#myButtonId")->click();
+
+    $result = $this->byCssSelector("#myElementId")->text();
+
+    // assertions are the same
+    $this->assertEquals("Expected text",$result);
+}</code></pre>
+					</section>
+
+					<section data-transition="convex">
+						<h2>Running Selenium Tests:</h2>
+
+						<pre><code class="bash">#!/bin/bash
+
+# first start the server
+java -jar ../selenium/selenium-server-standalone-2.47.1.jar &
+
+# run the test suite
+phpunit path/to/tests
+
+# stop the server (or leave it running)
+pkill -f 'selenium'
+</code></pre>
+					</section>
+
+					<section>
+						<h2>Using Selenium IDE</h2>
+						<p><img src="assets/selenium-ide.png"></p>
+					</section>
 				</section>
 
 				<section>
