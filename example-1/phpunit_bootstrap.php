@@ -10,6 +10,9 @@
  * the code coverage report
  */
 
-define('UNIT_TEST_BROWSER', 'firefox'); // 'firefox' or 'phantomjs'
+define('UNIT_TEST_BROWSER', getenv('UNIT_TEST_BROWSER')
+    ? getenv('UNIT_TEST_BROWSER')
+    : 'firefox');
+
 define('UNIT_TEST_APP_ROOT', 'http://localhost/php-unittest-presentation/example-1/');
 define('UNIT_TEST_SCREENSHOT_DIR', __DIR__ . '/tests-output/screenshots/');
