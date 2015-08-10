@@ -51,14 +51,18 @@
 				</section>
 
 				<section data-transition="convex">
-					<h2>Hello!</h2>
+					<h2>Hello Chicago PHP!</h2>
 					<p>First, a few things...</p>
 					<ul>
-						<li class="fragment"><span class="">Code examples are purposely minimal</span></li>
-						<li class="fragment"><span class="">No frameworks, no composer, no autoloaders</span></li>
-						<li class="fragment"><span class="">We'll go over just enough to get started</span></li>
-						<li class="fragment"><span class="">I don't know everything - suggestions welcome!</span></li>
+						<li class=""><span class="">Code examples are purposely minimal</span></li>
+						<li class=""><span class="">No frameworks or autoloaders</span></li>
+						<li class=""><span class="">No mocks, doubles, stubs, DI, IoC, etc.</span></li>
+						<li class=""><span class="">No build tools, composer, npm, grunt, etc.</span></li>
+						<li class=""><span class="">We'll go over enough to get started</span></li>
 					</ul>
+
+					<blockquote class="fragment">I don't know everything.<br/>Suggestions welcome!</blockquote>
+
 				</section>
 
 				<section>
@@ -70,18 +74,21 @@
 					<section>
 						<h2>What is Unit Testing?</h2>
 						<ul>
-							<li class=""><span class="">Automated testing of your application</span></li>
-							<li class=""><span class="">Shows you how much of your code is tested</span></li>
+							<li class=""><span class="">Writing testable code</span></li>
+							<li class=""><span class="">Automating test process</span></li>
+							<li class=""><span class="">Analyzing code coverage</span></li>
 						</ul>
+
+						<blockquote class="fragment">Unit testing vs functional testing:<br>We'll be mixing these together</blockquote>
 					</section>
 
 					<section data-transition="convex">
 						<h2>Why Write Unit Tests?</h2>
 						<ul>
-							<li class=""><span class="">Helps you find bugs</span></li>
-							<li class=""><span class="">Does the tedious testing for you</span></li>
+							<li class=""><span class="">Helps you discover bugs</span></li>
+							<li class=""><span class="">Runs tedious test procedures for you</span></li>
 							<li class=""><span class="">Saves you time during development</span></li>
-							<li class=""><span class="">Lets you know if you broke something</span></li>
+							<li class=""><span class="">Alerts you when you break something</span></li>
 							<li class=""><span class="">PHP has great unit testing tools</span></li>
 						</ul>
 					</section>
@@ -89,10 +96,11 @@
 					<section data-transition="convex">
 						<h2>How Do I Get Started?</h2>
 						<ul>
-							<li class=""><span class="">Use it to automate a boring, repetitive task</span></li>
-							<li class=""><span class="">Write a test for another programmer</span></li>
-							<li class=""><span class="">Don't worry about covering the entire codebase</span></li>
+							<li class=""><span class="">Don't worry about covering your entire codebase</span></li>
 							<li class=""><span class="">Start with one test for your next feature/bugfix</span></li>
+							<li class=""><span class="">Write a test that reproduces a bug</span></li>
+							<li class=""><span class="">Write a test for another programmer</span></li>
+							<li class=""><span class="">Use it to automate a boring, repetitive task</span></li>
 						</ul>
 					</section>
 				</section>
@@ -105,10 +113,11 @@
 					</section>
 
 					<section data-transition="convex">
-						<h4>Components and Versions and Plugins, Oh My!</h4>
+						<h4>Components and Libraries and Plugins, Oh My!</h4>
 						<ul>
 							<li>Selenium 1 vs. Selenium 2</li>
 							<li>Selenium RC vs. Selenium WebDriver</li>
+							<li>Selenium Grid</li>
 							<li>Selenium IDE</li>
 							<li>Selenium Formatters</li>
 						</ul>
@@ -147,6 +156,16 @@
 						<ul>
 							<li><span class="">Selenium IDE 2.9.0</span></li>
 							<li><span class="">Selenium 2 PHP Formatter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+						</ul>
+					</section>
+
+					<section data-transition="convex">
+						<h2>It's way easier</h2>
+						<ul>
+							<li>PHPUnit is self-contained .phar</li>
+							<li>Selenium 2 is self-contained .jar</li>
+							<li>PhantomJS is a self-contained binary</li>
+							<li>WebDriver, GhostDriver, Wire Protocol not needed</li>
 						</ul>
 					</section>
 
@@ -233,7 +252,14 @@
 					<p>Presentation materials are online at <a href="https://github.com/jasonhinkle/php-unittest-presentation">github.com/jasonhinkle/php-unittest-presentation</a></p>
 				</section>
 
-
+				<section>
+					<h2>Additional Links</h2>
+					<ul>
+						<li><a href="https://github.com/giorgiosironi/phpunit-selenium">phpunit_coverage</a></p>
+						<li><a href="https://github.com/sebastianbergmann/php-code-coverage">Code_Coverage_Filter</a></li>
+						<li><a href="https://github.com/sebastianbergmann/php-file-iterator">File_Iterator_Facade</a></li>
+					</ul>
+				</section>
 			</div>
 
 		</div>
