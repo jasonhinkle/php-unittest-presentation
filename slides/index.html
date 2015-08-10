@@ -54,8 +54,8 @@
 					<h2>Hello Chicago PHP!</h2>
 					<p>First, a few things...</p>
 					<ul>
+						<li class=""><span class="">It's a deep topic - we'll hit the basics</span></li>
 						<li class=""><span class="">Code examples are purposely minimal</span></li>
-						<li class=""><span class="">No frameworks or autoloaders, build tools</span></li>
 						<li class=""><span class="">I'll be mixing Unit &amp; Functional Testing</span></li>
 						<li class=""><span class="">These slides and code are <a href="https://github.com/jasonhinkle/php-unittest-presentation">online</a></span></li>
 					</ul>
@@ -164,20 +164,20 @@
 
 				<section>
 
-					<section data-transition="convex">
+					<section>
 						<h2>Anatomy of a Unit Test</h2>
 						<p><img src="assets/unit-test.png"></p>
 					</section>
 
-					<section>
+					<section data-transition="convex">
 						<h2>Running a test is easy:</h2>
 						<code class="hljs">
 							phpunit path/to/tests
 						</code>
 					</section>
 
-					<section>
-						<h2>PHPUnit Configuration</h2>
+					<section data-transition="convex">
+						<h2>Optional Configuration</h2>
 						<ul>
 							<li class=""><span class="">phpunit.xml</span></li>
 							<li class=""><span class="">printerClass</span></li>
@@ -186,7 +186,7 @@
 				</section>
 
 				<section>
-					<h2>Selenium IDE</h2>
+					<h2>Selenium IDE Demo</h2>
 					<p><img src="assets/selenium-ide.png"></p>
 				</section>
 
@@ -199,7 +199,7 @@
 
 					</section>
 
-					<section>
+					<section data-transition="convex">
 						<h2>Coverage Configuration</h2>
 						<ul>
 							<li class=""><span class="">phpunit.xml</span></li>
@@ -207,17 +207,23 @@
 						</ul>
 					</section>
 
-					<section>
+					<section data-transition="convex">
 						<h2>Coverage for Selenium</h2>
+						<blockquote>Setup is a PITA, don't give up!</blockquote>
 						<ul>
-							<li class=""><span class="">phpunit_coverage.php</span></li>
-							<li class=""><span class="">append.php / prepend.php</span></li>
+							<li class=""><span class="">$coverageScriptUrl = 'http://.../phpunit_coverage.php'</span></li>
+							<li class=""><span class="">php.ini configuration:</span>
+								<ul>
+									<li>auto_prepend_file = /path/to/prepend.php</li>
+									<li>auto_append_file = /path/to/append.php</li>
+								</ul>
+							</li>
 						</ul>
 					</section>
 
 				</section>
 
-				<section data-transition="convex">
+				<section>
 					<h2>How Do I Get Started?</h2>
 					<ul>
 						<li class=""><span class="">Don't worry about covering your entire codebase</span></li>
