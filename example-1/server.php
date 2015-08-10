@@ -1,6 +1,5 @@
 <?php
 
-require_once '../libs/ColorUtil.php';
 require_once '../libs/NumberUtil.php';
 
 $number = strip_tags(
@@ -20,7 +19,5 @@ try {
 catch (Exception $ex) {
     $result->error = $ex->getMessage();
 }
-
-
 
 echo json_encode($result);

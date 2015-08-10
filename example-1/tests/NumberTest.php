@@ -15,10 +15,6 @@ class NumberTest extends PHPUnit_Framework_TestCase
         $this->assertFalse(
             $util->IsEven(3),
             'Test that 3 is not even');
-
-        $this->assertTrue(
-            $util->IsOdd(3),
-            'Test that 3 is odd');
     }
 
     public function testSimpleNumberToWords()

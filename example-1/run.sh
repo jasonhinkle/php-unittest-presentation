@@ -19,4 +19,5 @@ pkill -f 'selenium'
 
 echo "Testing Complete."
 
+sleep 3
 open http://localhost/php-unittest-presentation/example-1/tests-output/coverage/

@@ -26,7 +26,7 @@
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
-			link.href = window.location.search.match( /reveal-js/print-pdf/gi ) ? 'reveal-js/css/print/pdf.css' : 'reveal-js/css/print/paper.css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal-js/css/print/pdf.css' : 'reveal-js/css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 
@@ -44,7 +44,7 @@
 
 				<section data-background="assets/background.gif">
 					<div class="well">
-						<h2>PHP Unit Testing Simplified</h2>
+						<h2>PHP Unit Testing</h2>
 						<p>Jason Hinkle - Eventric, Chicago IL</p>
 						<p>github.com/jasonhinkle</p>
 					</div>
@@ -55,10 +55,9 @@
 					<p>First, a few things...</p>
 					<ul>
 						<li class=""><span class="">Code examples are purposely minimal</span></li>
-						<li class=""><span class="">No frameworks or autoloaders</span></li>
-						<li class=""><span class="">No mocks, doubles, stubs, DI, IoC, etc.</span></li>
-						<li class=""><span class="">No build tools, composer, npm, grunt, etc.</span></li>
-						<li class=""><span class="">We'll go over enough to get started</span></li>
+						<li class=""><span class="">No frameworks or autoloaders, build tools</span></li>
+						<li class=""><span class="">I'll be mixing Unit &amp; Functional Testing</span></li>
+						<li class=""><span class="">These slides and code are <a href="https://github.com/jasonhinkle/php-unittest-presentation">online</a></span></li>
 					</ul>
 
 					<blockquote class="fragment">I don't know everything.<br/>Suggestions welcome!</blockquote>
@@ -66,106 +65,39 @@
 				</section>
 
 				<section>
-					<h2>Let's start with a demo...</h2>
+					<h2>Let's see a demo!</h2>
 					<p><a href="../example-1/" target="_blank"><img src="assets/example-1.png"></a></p>
 				</section>
 
 				<section>
-					<section>
-						<h2>What is Unit Testing?</h2>
-						<ul>
-							<li class=""><span class="">Writing testable code</span></li>
-							<li class=""><span class="">Automating test process</span></li>
-							<li class=""><span class="">Analyzing code coverage</span></li>
-						</ul>
-
-						<blockquote class="fragment">Unit testing vs functional testing:<br>We'll be mixing these together</blockquote>
-					</section>
-
-					<section data-transition="convex">
-						<h2>Why Write Unit Tests?</h2>
-						<ul>
-							<li class=""><span class="">Helps you discover bugs</span></li>
-							<li class=""><span class="">Runs tedious test procedures for you</span></li>
-							<li class=""><span class="">Saves you time during development</span></li>
-							<li class=""><span class="">Alerts you when you break something</span></li>
-							<li class=""><span class="">PHP has great unit testing tools</span></li>
-						</ul>
-					</section>
-
-					<section data-transition="convex">
-						<h2>How Do I Get Started?</h2>
-						<ul>
-							<li class=""><span class="">Don't worry about covering your entire codebase</span></li>
-							<li class=""><span class="">Start with one test for your next feature/bugfix</span></li>
-							<li class=""><span class="">Write a test that reproduces a bug</span></li>
-							<li class=""><span class="">Write a test for another programmer</span></li>
-							<li class=""><span class="">Use it to automate a boring, repetitive task</span></li>
-						</ul>
-					</section>
-				</section>
-
-				<section>
 
 					<section>
-						<h2>Selenium Browser Automation</h2>
+						<h2>Installing The Tools</h2>
 						<p><img src="assets/confused.jpg"></p>
 					</section>
 
-					<section data-transition="convex">
-						<h4>Components and Libraries and Plugins, Oh My!</h4>
-						<ul>
-							<li>Selenium 1 vs. Selenium 2</li>
-							<li>Selenium RC vs. Selenium WebDriver</li>
-							<li>Selenium Grid</li>
-							<li>Selenium IDE</li>
-							<li>Selenium Formatters</li>
-						</ul>
-
-						<blockquote class="fragment">The download page has 100s of links!</blockquote>
-					</section>
-
-					<section data-transition="convex">
-						<h2>Online Help - not so helpful</h2>
-						<ul>
-							<li><span class="">Major breaking syntax changes between v1 and v2</span></li>
-							<li><span class="">Headless browser testing requires v2</span></li>
-							<li><span class="">Most online examples are for v1</span></li>
-							<li><span class="">Selenium+PhantomJS tutorials are incorrect</span></li>
-							<li><span class="">Current PhantomJS (2.0) binary release is broken!</span></li>
-						</ul>
-					</section>
-
-				</section>
-
-				<section>
 					<section>
-						<p><img src="assets/good-news.jpg"></p>
+						<h2>Things we will need</h2>
+						<ul>
+							<li class=""><span class="">Some unit tests</span></li>
+							<li class=""><span class="">Tool to run the tests</span></li>
+							<li class=""><span class="">Something to control the browser</span></li>
+						</ul>
 					</section>
 
 					<section data-transition="convex">
-						<h2>We only need these three</h2>
+						<h2>These two are required</h2>
 						<ul>
 							<li><span class="">PHPUnit 4.8</span></li>
 							<li><span class="">Selenium Stand-Alone Server 2.47.0</span></li>
-							<li><span class="">PhantomJS 2.0 (Patched)</span></li>
 						</ul>
 
-						<p><h4>These two helper utilities are optional</h4></p>
+						<p><h3>These three are optional</h3></p>
 
 						<ul>
+							<li><span class="">PhantomJS 2.0 (Patched)</span></li>
 							<li><span class="">Selenium IDE 2.9.0</span></li>
 							<li><span class="">Selenium 2 PHP Formatter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
-						</ul>
-					</section>
-
-					<section data-transition="convex">
-						<h2>It's way easier</h2>
-						<ul>
-							<li>PHPUnit is self-contained .phar</li>
-							<li>Selenium 2 is self-contained .jar</li>
-							<li>PhantomJS is a self-contained binary</li>
-							<li>WebDriver, GhostDriver, Wire Protocol not needed</li>
 						</ul>
 					</section>
 
@@ -231,18 +163,67 @@
 				</section>
 
 				<section>
-					<h2>Let's Write Some Code...</h2>
-					<p><img src="assets/test-case-code.png"></p>
+
+					<section data-transition="convex">
+						<h2>Anatomy of a Unit Test</h2>
+						<p><img src="assets/unit-test.png"></p>
+					</section>
+
+					<section>
+						<h2>Running a test is easy:</h2>
+						<code class="hljs">
+							phpunit path/to/tests
+						</code>
+					</section>
+
+					<section>
+						<h2>PHPUnit Configuration</h2>
+						<ul>
+							<li class=""><span class="">phpunit.xml</span></li>
+							<li class=""><span class="">printerClass</span></li>
+						</ul>
+					</section>
 				</section>
 
 				<section>
-					<h2>Selenium IDE Demo</h2>
+					<h2>Selenium IDE</h2>
 					<p><img src="assets/selenium-ide.png"></p>
 				</section>
 
 				<section>
-					<h2>PhantomJS Headless Browser</h2>
-					<p><img src="assets/phantomjs.png"></p>
+					<section>
+						<h2>Coverage Reports</h2>
+						<code class="hljs">
+							phpunit --coverage-html /output/ /tests/
+						</code>
+
+					</section>
+
+					<section>
+						<h2>Coverage Configuration</h2>
+						<ul>
+							<li class=""><span class="">phpunit.xml</span></li>
+							<li class=""><span class="">whitelist &amp; exclude</span></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Coverage for Selenium</h2>
+						<ul>
+							<li class=""><span class="">phpunit_coverage.php</span></li>
+							<li class=""><span class="">append.php / prepend.php</span></li>
+						</ul>
+					</section>
+
+				</section>
+
+				<section data-transition="convex">
+					<h2>How Do I Get Started?</h2>
+					<ul>
+						<li class=""><span class="">Don't worry about covering your entire codebase</span></li>
+						<li class=""><span class="">Start with one test for your next feature/bugfix</span></li>
+						<li class=""><span class="">Automation a boring, repetitious task</span></li>
+					</ul>
 				</section>
 
 				<!-- THANK YOU -->
@@ -255,7 +236,7 @@
 				<section>
 					<h2>Additional Links</h2>
 					<ul>
-						<li><a href="https://github.com/giorgiosironi/phpunit-selenium">phpunit_coverage</a></p>
+						<li><a href="https://github.com/giorgiosironi/phpunit-selenium">phpunit_coverage</a></li>
 						<li><a href="https://github.com/sebastianbergmann/php-code-coverage">Code_Coverage_Filter</a></li>
 						<li><a href="https://github.com/sebastianbergmann/php-file-iterator">File_Iterator_Facade</a></li>
 					</ul>

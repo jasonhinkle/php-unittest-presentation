@@ -53,18 +53,6 @@ class UITest extends PHPUnit_Extensions_Selenium2TestCase
 	}
 
     /**
-     * Test that the index page is loading, checking for a landmark
-     */
-    public function testShowIndex()
-    {
-        $this->openBrowserToUrl(UNIT_TEST_APP_ROOT);
-
-        $val = $this->byCssSelector("a.navbar-brand")->text();
-
-		$this->assertEquals("Example One", $val);
-    }
-
-    /**
      * Check that a simple conversion displays correctly
      */
     public function testSimpleConversion()
@@ -83,9 +71,6 @@ class UITest extends PHPUnit_Extensions_Selenium2TestCase
         $result = $this->byCssSelector("#resultContainer")->text();
 
         $this->assertEquals("two hundred and fifty",$result);
-
-        // $this->saveScreenshot();
-
     }
 
 	/**

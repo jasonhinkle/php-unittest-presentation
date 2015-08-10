@@ -17,5 +17,3 @@ echo "Shutting Down Selenium Server..."
 pkill -f 'selenium'
 
 echo "Testing Complete."
-
-open http://localhost/php-unittest-presentation/example-3/tests-output/coverage/
