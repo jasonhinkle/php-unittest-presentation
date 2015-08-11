@@ -4,7 +4,7 @@ class NumberUtil
 {
 
     /** @var array of strings for numbers */
-    const NUMBER_NAMES = array(
+    static $NUMBER_NAMES = array(
             0                   => 'zero',
             1                   => 'one',
             2                   => 'two',
@@ -89,20 +89,20 @@ class NumberUtil
 
         switch (true) {
             case $number < 21:
-                $string = self::NUMBER_NAMES[$number];
+                $string = self::$NUMBER_NAMES[$number];
                 break;
             case $number < 100:
                 $tens   = ((int) ($number / 10)) * 10;
                 $units  = $number % 10;
-                $string = self::NUMBER_NAMES[$tens];
+                $string = self::$NUMBER_NAMES[$tens];
                 if ($units) {
-                    $string .= $hyphen . self::NUMBER_NAMES[$units];
+                    $string .= $hyphen . self::$NUMBER_NAMES[$units];
                 }
                 break;
             case $number < 1000:
                 $hundreds  = $number / 100;
                 $remainder = $number % 100;
-                $string = self::NUMBER_NAMES[$hundreds] . ' ' . self::NUMBER_NAMES[100];
+                $string = self::$NUMBER_NAMES[$hundreds] . ' ' . self::$NUMBER_NAMES[100];
                 if ($remainder) {
                     $string .= $conjunction . $this->GetWords($remainder);
                 }
@@ -111,7 +111,7 @@ class NumberUtil
                 $baseUnit = pow(1000, floor(log($number, 1000)));
                 $numBaseUnits = (int) ($number / $baseUnit);
                 $remainder = $number % $baseUnit;
-                $string = $this->GetWords($numBaseUnits) . ' ' . self::NUMBER_NAMES[$baseUnit];
+                $string = $this->GetWords($numBaseUnits) . ' ' . self::$NUMBER_NAMES[$baseUnit];
                 if ($remainder) {
                     $string .= $remainder < 100 ? $conjunction : $separator;
                     $string .= $this->GetWords($remainder);
@@ -123,7 +123,7 @@ class NumberUtil
             $string .= $decimal;
             $words = array();
             foreach (str_split((string) $fraction) as $number) {
-                $words[] = self::NUMBER_NAMES[$number];
+                $words[] = self::$NUMBER_NAMES[$number];
             }
             $string .= implode(' ', $words);
         }

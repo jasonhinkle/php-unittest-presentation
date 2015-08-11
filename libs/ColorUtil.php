@@ -3,7 +3,7 @@
 class ColorUtil
 {
 
-    const COLOR_NAMES = array(
+    static $COLOR_NAMES = array(
         "black"     => array(0, 0, 0),
         "green"     => array(0, 128, 0),
         "silver"    => array(192, 192, 192),
@@ -24,7 +24,7 @@ class ColorUtil
 
     public function GetHexString($name)
     {
-        $color = self::COLOR_NAMES[$name];
+        $color = self::$COLOR_NAMES[$name];
         return strtoupper('#'
             . str_pad(dechex($color[0]), 2, '0', STR_PAD_LEFT)
             . str_pad(dechex($color[1]), 2, '0', STR_PAD_LEFT)

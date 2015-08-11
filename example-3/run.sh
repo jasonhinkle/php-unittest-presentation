@@ -12,7 +12,7 @@ java -jar ../selenium/selenium-server-standalone-2.47.1.jar &> tests-output/sele
 sleep 1
 
 # read by phpunit_bootstrap.php (options: firefox or phantomjs)
-export UNIT_TEST_BROWSER=firefox
+export UNIT_TEST_BROWSER=phantomjs
 
 phpunit tests/
 
