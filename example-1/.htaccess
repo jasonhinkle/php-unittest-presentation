@@ -1,4 +1,0 @@
-# required for code coverage of selenium tests
-php_value include_path '/var/www/php-unittest-presentation/'
-php_value auto_prepend_file "selenium/prepend.php"
-php_value auto_append_file "selenium/append.php"
